@@ -21,10 +21,6 @@ const data = {
     quantity: {
         type: Number
     },
-    sold: {
-        type: Number,
-        default: 1
-    },
     photoUrl: {
         type: String,
     }
