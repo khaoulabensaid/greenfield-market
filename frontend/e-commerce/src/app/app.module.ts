@@ -12,8 +12,8 @@ import { ApiService } from './service/api.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ShowProductComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ShowProductComponent
    
   ],
   imports: [

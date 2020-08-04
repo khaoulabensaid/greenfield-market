@@ -1,13 +1,10 @@
 <nav class="nav" >
-    <a class="nav-link"  *ngFor="let category of Category; let i = index" href="#">{{category.name}}</a>
-    <!-- <div class="card" style="width: 18rem;"  *ngFor="let category of Category; let i = index">
-        <img src={{category.imgUrl}} class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-  </div> -->
+    <button class="nav-link" (click)=onClick($event.target)
+    
+     *ngFor="let category of categories; let i = index"
+      >{{category.name}}</button>
+ 
 </nav>
+<input type="text" (keyup) =onClick($event) >
 
   
