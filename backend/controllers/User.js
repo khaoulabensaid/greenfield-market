@@ -2,23 +2,20 @@ const UserShema = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
-exports.signin = (req, res) => {
-    res.send('from user route')
-};
-
 exports.signup = (req,res)=>{
     let userData = req.body;
     let user = new UserShema(userData);
-
-    user.save((error, registeredUser)=>{
-        if(error) {
-            console.log(error)
-        } else {
-            res.status(200).send(registeredUser)
-        }
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+      user.password = hash
+      user.save((error, registeredUser)=>{
+      let payload = { subject: registeredUser._id};
+      let token = jwt.sign(payload,"secretKey")
+      res.status(200).send({token})
+      })
     })
 }
+  
+             
 exports.login = (req,res) => {
     let userData = req.body;
 
@@ -31,7 +28,9 @@ exports.login = (req,res) => {
             } else if (user.password !== userData.password){
                 res.status(401).send('invalid password')
             } else {
-                res.status(200).send(user)
+              let payload =  { subject: user._id};
+              let token = jwt.sign(payload, "secretKey")
+                res.status(200).send({token})
             }
         }
     })
