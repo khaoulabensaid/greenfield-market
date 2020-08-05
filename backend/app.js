@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+var Product = require("./routers/products.js");
+var Category = require("./routers/categories.js");
 const cors = require('cors')
 
 
@@ -17,6 +19,10 @@ mongoose
 app.use(cors())
 app.use(bodyParser.json());
 
+
+
+app.use("/", Product);
+app.use("/", Category);
 app.use('/user',user)
 app.get('/',(req,res)=>res.send('hello from server'));
 

@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { EventsComponent } from './events/events.component'; 
 import { SpecialsComponent } from './specials/specials.component'; 
 import { LoginComponent } from './login/login.component'; 
 import { RegisterComponent } from './register/register.component'; 
 import { AuthGuard } from './auth.guard'
-
 const routes: Routes = [
+  {
+    path: 'product', 
+    component: ShowProductComponent
+  },
+  {
+    path: 'category', 
+    component: CategoriesComponent
+  },
   {
     path:'',
     redirectTo: '/events',
