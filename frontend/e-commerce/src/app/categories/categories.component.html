@@ -1,10 +1,10 @@
 <nav class="nav" >
-    <button class="nav-link" (click)=onClick($event.target)
+    <a class="nav-link" (click)=onClick($event.target) [routerLink] = "['/product']"
     
      *ngFor="let category of categories; let i = index"
-      >{{category.name}}</button>
+      href ="#" >{{category.name}}</a>
  
 </nav>
-<input type="text" (keyup) =onClick($event) >
+
 
   

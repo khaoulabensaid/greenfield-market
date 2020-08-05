@@ -8,10 +8,11 @@ import { ApiService } from '../service/api.service';
 })
 export class CategoriesComponent implements OnInit {
   categories:any = [];
-  input = '';
+  private input : string;
+ 
   constructor(private apiService: ApiService) { 
+    this.input = ""
     this.readCategory();
-  
   }
 
   
@@ -22,11 +23,8 @@ export class CategoriesComponent implements OnInit {
     })  
   }
   onClick(prod) {
-
     this.input = Object.values(prod)[0][22]
-    console.log( this.input);
-    
+    alert(this.input)
  }
-
-
 }
+

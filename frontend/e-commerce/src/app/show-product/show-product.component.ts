@@ -10,6 +10,7 @@ export class ShowProductComponent implements OnInit {
 
   constructor(private apiService: ApiService) { 
     this.readProduct();
+    this.input = ''
   }
 
   ngOnInit(): void {
