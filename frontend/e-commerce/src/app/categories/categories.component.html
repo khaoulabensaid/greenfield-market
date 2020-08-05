@@ -1,10 +1,11 @@
+
 <nav class="nav" >
-    <a class="nav-link" (click)=onClick($event.target) 
+    <a class="nav-link" 
     
      *ngFor="let category of categories; let i = index"
       href ="#" >{{category.name}}</a>
- 
 </nav>
 
 
-  
+
+<!-- (click)=onClick($event.target) [routerLink] ="['/product']" -->

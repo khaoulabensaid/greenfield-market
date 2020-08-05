@@ -8,23 +8,25 @@ import { ApiService } from '../service/api.service';
 })
 export class CategoriesComponent implements OnInit {
   categories:any = [];
-  private input : string;
+ 
  
   constructor(private apiService: ApiService) { 
-    this.input = ""
     this.readCategory();
+   
   }
 
-  
-  ngOnInit(): void { }
+  input = "jhdfvhjfbk,k,jvhhjfhjjhffqsg"
+  ngOnInit(): void { 
+    this.apiService.setInput(this.input)
+  }
   readCategory(){
     this.apiService.getCategories().subscribe((data) => {
      this.categories = data;
     })  
   }
-  onClick(prod) {
-    this.input = Object.values(prod)[0][22]
-    alert(this.input)
- }
+//   onClick(prod) {
+//     this.input = prod.innerText
+//     console.log(this.input);
+//  }
 }
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../service/api.service';
+
 @Component({
   selector: 'app-show-product',
   templateUrl: './show-product.component.html',
@@ -7,18 +8,23 @@ import { ApiService } from '../service/api.service';
 })
 export class ShowProductComponent implements OnInit {
   products:any = [];
-
+  input : string;
   constructor(private apiService: ApiService) { 
-    this.readProduct();
+  
+    // this.readProduct();
    
   }
 
   ngOnInit(): void {
+   this.input = this.apiService.getInput();
+   console.log(this.input);
+   
   }
-  readProduct(){
-    this.apiService.getProducts().subscribe((data) => {
-     this.products = data;
-    })  
-  }
+  // readProduct(){
+  //   this.apiService.getProducts(this.input).subscribe((data) => {
+  //    this.products = data;
+  //    console.log(this.input);
+  //   })  
+  // }
 
 }
