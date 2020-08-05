@@ -18,8 +18,7 @@ export class ApiService {
     return this.http.get(`${this.categoryUrl}`);
   }
 
-  getProducts(input : string) {
-    
+  getProducts() {
     return this.http.get(`${this.productUrl}`);
   }
 }

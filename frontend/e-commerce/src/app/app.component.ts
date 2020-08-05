@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from './service/api.service'
+import { AuthService } from './auth.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: `./app.component.html`,
@@ -7,4 +8,6 @@ import { ApiService } from './service/api.service'
 })
 export class AppComponent {
   title = 'e-commerce';
+
+  constructor(public _authService: AuthService){}
 }
