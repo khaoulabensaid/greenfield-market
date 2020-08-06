@@ -30,6 +30,7 @@ products.get("/getProduct", (req, res) => {
   });
 });
 products.get("/getProductsWithCategory/:category", (req, res) => {
+  console.log('we are here')
   Product.find({ category: req.params.category }, (err, result) => {
     if (err) {
       res.send(err);

@@ -22,7 +22,7 @@ export class CategoriesComponent implements OnInit {
      this.categories = data;
     })  
   }
-  onClick(prod) {
+  onClick (prod) {
     this.input = Object.values(prod)[0][22]
     alert(this.input)
  }

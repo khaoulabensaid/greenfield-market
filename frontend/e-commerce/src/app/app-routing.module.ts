@@ -7,7 +7,12 @@ import { SpecialsComponent } from './specials/specials.component';
 import { LoginComponent } from './login/login.component'; 
 import { RegisterComponent } from './register/register.component'; 
 import { AuthGuard } from './auth.guard'
+
 const routes: Routes = [
+  {
+    path:'',
+    component: EventsComponent,
+  },
   {
     path: 'product', 
     component: ShowProductComponent
@@ -17,9 +22,8 @@ const routes: Routes = [
     component: CategoriesComponent
   },
   {
-    path:'',
-    redirectTo: '/events',
-    pathMatch: 'full'
+    path: 'category/:category',
+    component: ShowProductComponent,
   },
   {
     path:'events',
@@ -36,6 +40,10 @@ const routes: Routes = [
   },
   {
     path:'register',
+    component: RegisterComponent
+  },
+  {
+    path:'fruits',
     component: RegisterComponent
   }
 ];

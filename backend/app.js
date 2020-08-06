@@ -2,13 +2,14 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-var Product = require("./routers/products.js");
-var Category = require("./routers/categories.js");
+
 const cors = require('cors')
 
-
+const Product = require("./routers/products.js");
+const Category = require("./routers/categories.js");
 const user = require('./routers/User')
 
+mongoose.set('useCreateIndex', true)
 mongoose
 .connect('mongodb+srv://camping:@khaoulabensaid@cluster0-3qj0d.mongodb.net/market?retryWrites=true&w=majority',
 { useNewUrlParser: true, useUnifiedTopology: true }
