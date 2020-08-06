@@ -16,9 +16,12 @@ export class ShowProductComponent implements OnInit {
 
   ngOnInit(): void { 
     this.activeRoute.params.subscribe(routeParams => {
+      console.log(routeParams);
+      
       const category = routeParams.category
       this.apiService.getProducts(category).subscribe((data) => {
         this.products = data
+        console.log('data',data)
       })
     });
 
