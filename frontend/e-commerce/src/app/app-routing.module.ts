@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { EventsComponent } from './events/events.component'; 
 import { SpecialsComponent } from './specials/specials.component'; 
 import { LoginComponent } from './login/login.component'; 
@@ -9,8 +11,19 @@ import { AuthGuard } from './auth.guard'
 const routes: Routes = [
   {
     path:'',
-    redirectTo: '/events',
-    pathMatch: 'full'
+    component: EventsComponent,
+  },
+  {
+    path: 'product', 
+    component: ShowProductComponent
+  },
+  {
+    path: 'category', 
+    component: CategoriesComponent
+  },
+  {
+    path: 'category/:category',
+    component: ShowProductComponent,
   },
   {
     path:'events',
@@ -27,6 +40,10 @@ const routes: Routes = [
   },
   {
     path:'register',
+    component: RegisterComponent
+  },
+  {
+    path:'fruits',
     component: RegisterComponent
   }
 ];
