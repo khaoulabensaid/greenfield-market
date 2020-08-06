@@ -11,6 +11,7 @@ export class ApiService {
   categoryUrl :string = 'http://localhost:3000/getCategory';
   productUrl :string = `http://localhost:3000/getProductsWithCategory`;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+  
   constructor(private http: HttpClient) { }
 
 

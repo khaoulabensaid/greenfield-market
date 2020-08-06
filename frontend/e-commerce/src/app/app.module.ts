@@ -5,13 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { ShowProductComponent } from './show-product/show-product.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ApiService } from './service/api.service';
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 
-// import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { RegisterComponent } from './register/register.component';
 import { EventsComponent } from './events/events.component';
 import { SpecialsComponent } from './specials/specials.component';
@@ -36,7 +34,6 @@ import { ShowProductComponent } from './show-product/show-product.component'
     FormsModule, 
     HttpClientModule,
     AppRoutingModule,
-
   ],
   providers: [AuthService, ApiService , AuthGuard,EventService, 
   {
