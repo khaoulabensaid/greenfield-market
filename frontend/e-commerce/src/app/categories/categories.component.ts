@@ -12,13 +12,13 @@ export class CategoriesComponent implements OnInit {
   message: string;
  
   constructor(private apiService: ApiService) { 
-    this.readCategory();
+    // this.readCategory();
    
   }
 
   
   ngOnInit(): void { 
-    this.apiService.setMessage(this.message)
+    // this.apiService.setMessage(this.message)
   }
   readCategory(){
     this.apiService.getCategories().subscribe((data) => {
@@ -26,11 +26,9 @@ export class CategoriesComponent implements OnInit {
     
     })  
   }
-  onClick(prod) {
-    this.message = prod.innerText
-    console.log(this.message);
-    
-  
- }
+//   onClick (prod) {
+//     this.input = Object.values(prod)[0][22]
+//     alert(this.input)
+//  }
 }
 

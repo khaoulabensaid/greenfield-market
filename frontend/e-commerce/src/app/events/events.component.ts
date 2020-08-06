@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { EventService } from '../event.service'
 @Component({
   selector: 'app-events',

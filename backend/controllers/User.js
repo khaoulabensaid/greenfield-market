@@ -20,17 +20,18 @@ exports.login = (req,res) => {
     let userData = req.body;
 
     UserShema.findOne({email: userData.email}, (error,user)=>{
+        
         if (error) {
             console.log(error)
         } else {
             if (!user) {
                 res.status(401).send('invalid email')
-            } else if (user.password !== userData.password){
-                res.status(401).send('invalid password')
-            } else {
+            } if (bcrypt.compareSync(req.body.password, user.password)) {
               let payload =  { subject: user._id};
               let token = jwt.sign(payload, "secretKey")
                 res.status(200).send({token})
+            } else {
+              res.status(401).send('invalid password')
             }
         }
     })

@@ -1,14 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Eventhub</a>
+    <!-- <a class="navbar-brand" href="#">Eventhub</a> -->
+    <a class="navbar-brand" routerLink="/">Eventhub</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/category" routerLinkActive="active">Category</a>
-        </li>
+       
+              <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item"  *ngFor="let category of categories; let i = index" routerLink= "category/{{category.name}}" routerLinkActive="active" >{{category.name}}</a>
+                </div>
+              </li>
+          
         <li class="nav-item">
           <a class="nav-link" routerLink="/special" routerLinkActive="active">Members</a>
         </li>
