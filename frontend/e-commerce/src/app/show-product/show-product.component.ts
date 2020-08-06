@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ApiService } from '../service/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-product',
@@ -8,22 +9,24 @@ import { ApiService } from '../service/api.service';
 })
 export class ShowProductComponent implements OnInit {
   products:any = [];
-  input : string;
-  constructor(private apiService: ApiService) { 
+ 
+  constructor(private apiService: ApiService, private activeRoute : ActivatedRoute) { 
   
     // this.readProduct();
    
   }
 
   ngOnInit(): void {
-   this.input = this.apiService.getInput();
-   console.log(this.input);
-   
+    this.activeRoute.params.subscribe(routeParams => {
+      const category = routeParams.category
+      this.apiService.getProducts(category).subscribe((data) => {
+        this.products = data
+      })
+    });
   }
-  // readProduct(){
-  //   this.apiService.getProducts(this.input).subscribe((data) => {
+  // readProduct()  {
+  //   this.apiService.getProducts().subscribe((data) => {
   //    this.products = data;
-  //    console.log(this.input);
   //   })  
   // }
 

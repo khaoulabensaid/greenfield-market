@@ -9,12 +9,12 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard'
 const routes: Routes = [
   {
-    path: 'product', 
-    component: ShowProductComponent
+    path: 'category/:categories', 
+    component: ShowProductComponent,
   },
   {
     path: 'category', 
-    component: CategoriesComponent
+    component: CategoriesComponent,
   },
   {
     path:'',

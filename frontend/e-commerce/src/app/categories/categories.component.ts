@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -8,25 +9,28 @@ import { ApiService } from '../service/api.service';
 })
 export class CategoriesComponent implements OnInit {
   categories:any = [];
- 
+  message: string;
  
   constructor(private apiService: ApiService) { 
     this.readCategory();
    
   }
 
-  input = "jhdfvhjfbk,k,jvhhjfhjjhffqsg"
+  
   ngOnInit(): void { 
-    this.apiService.setInput(this.input)
+    this.apiService.setMessage(this.message)
   }
   readCategory(){
     this.apiService.getCategories().subscribe((data) => {
      this.categories = data;
+    
     })  
   }
-//   onClick(prod) {
-//     this.input = prod.innerText
-//     console.log(this.input);
-//  }
+  onClick(prod) {
+    this.message = prod.innerText
+    console.log(this.message);
+    
+  
+ }
 }
 
