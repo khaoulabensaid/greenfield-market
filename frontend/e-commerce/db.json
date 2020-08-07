@@ -1,0 +1,142 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Aymen Yaich",
+      "description": "Aymen Yaich sfaxian horse love to eat carrot and some salad",
+      "imageUrl": "https://i.ibb.co/bX2FcHD/23155003-245810895948479-4210853522975951530-o.jpg",
+      "price": 0.99
+    },
+    {
+      "id": 2,
+      "name": "Zorro",
+      "description": "Brave man save the princess from the beast aymens",
+      "price": 999,
+      "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+    }
+  ],
+  "cart": [
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 1
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Aymen Yaich",
+        "description": "Aymen Yaich sfaxian horse love to eat carrot and some salad",
+        "imageUrl": "https://i.ibb.co/bX2FcHD/23155003-245810895948479-4210853522975951530-o.jpg",
+        "price": 0.99
+      },
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Aymen Yaich",
+        "description": "Aymen Yaich sfaxian horse love to eat carrot and some salad",
+        "imageUrl": "https://i.ibb.co/bX2FcHD/23155003-245810895948479-4210853522975951530-o.jpg",
+        "price": 0.99
+      },
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 4
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 5
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Aymen Yaich",
+        "description": "Aymen Yaich sfaxian horse love to eat carrot and some salad",
+        "imageUrl": "https://i.ibb.co/bX2FcHD/23155003-245810895948479-4210853522975951530-o.jpg",
+        "price": 0.99
+      },
+      "id": 6
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 7
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 8
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 9
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Zorro",
+        "description": "Brave man save the princess from the beast aymens",
+        "price": 999,
+        "imageUrl": "https://www.zorro.com/wp-content/uploads/cc_resize/005-1200x542.jpg"
+      },
+      "id": 10
+    }
+  ],
+  "wishlist": [
+    {
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
