@@ -1,35 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { MessengerService } from '../service/messenger.service';
+import { CartService } from '../service/cart.service';
+import { Product } from 'src/app/models/product';
+
 @Component({
   selector: 'app-show-product',
   templateUrl: './show-product.component.html',
-  styleUrls: ['./show-product.component.css']
+  styleUrls: ['./show-product.component.css'],
 })
 export class ShowProductComponent implements OnInit {
-  products:any = [];
+  products: any = [];
+  @Input() productItem: Product;
 
-  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute) { 
+  constructor(
+    private apiService: ApiService,
+    private activeRoute: ActivatedRoute,
+    private msg: MessengerService,
+    private cartService: CartService
+  ) {
     // this.readProduct();
-    console.log(this.products)
+    console.log(this.products);
   }
 
-  ngOnInit(): void { 
-    this.activeRoute.params.subscribe(routeParams => {
+  ngOnInit(): void {
+    this.activeRoute.params.subscribe((routeParams) => {
       console.log(routeParams);
-      
-      const category = routeParams.category
+
+      const category = routeParams.category;
       this.apiService.getProducts(category).subscribe((data) => {
-        this.products = data
-        console.log('data',data)
-      })
+        this.products = data;
+        console.log('data', data);
+      });
     });
-
   }
-  // readProduct(){
-  //   this.apiService.getProducts().subscribe((data) => {
-  //    this.products = data;
-  //   })  
-  // }
-
+  handleAddToCart() {
+    this.cartService.addProductToCart(this.productItem).subscribe(() => {
+      this.msg.sendMsg(this.productItem);
+    });
+  }
 }
