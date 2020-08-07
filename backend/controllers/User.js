@@ -20,7 +20,6 @@ exports.login = (req,res) => {
     let userData = req.body;
 
     UserShema.findOne({email: userData.email}, (error,user)=>{
-        
         if (error) {
             console.log(error)
         } else {
