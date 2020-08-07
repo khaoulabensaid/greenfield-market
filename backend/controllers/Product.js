@@ -23,7 +23,6 @@ exports.getProductAll = (req, res) => {
   }
 
 exports.filtreProduct = (req, res) => {
-    console.log('we are here')
     Product.find({ category: req.params.category }, (err, result) => {
       if (err) {
         res.send(err);

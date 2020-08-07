@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoriesComponent } from './categories/categories.component';
 import { ApiService } from './service/api.service';
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
@@ -25,7 +24,6 @@ import { ShowProductComponent } from './show-product/show-product.component'
     EventsComponent,
     SpecialsComponent,
     LoginComponent,
-    CategoriesComponent,
     ShowProductComponent
   ],
 

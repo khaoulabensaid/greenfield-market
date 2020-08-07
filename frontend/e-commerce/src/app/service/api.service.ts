@@ -13,19 +13,8 @@ export class ApiService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   
   constructor(private http: HttpClient) { }
- 
-  // setMessage(data){
-  //   this.message = data;
-  // }
-
-  // getMessage(){
-  //   return this.message
-  // }
-
-
 
   getCategories() {
-    
     return this.http.get(`${this.categoryUrl}`);
   }
 

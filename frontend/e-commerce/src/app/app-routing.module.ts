@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ShowProductComponent } from './show-product/show-product.component';
-import { CategoriesComponent } from './categories/categories.component';
 import { EventsComponent } from './events/events.component'; 
 import { SpecialsComponent } from './specials/specials.component'; 
 import { LoginComponent } from './login/login.component'; 
@@ -13,14 +12,11 @@ const routes: Routes = [
     path:'',
     component: EventsComponent,
   },
-  {
-    path: 'product', 
-    component: ShowProductComponent
-  },
-  {
-    path: 'category', 
-    component: CategoriesComponent,
-  },
+  // {
+  //   path: 'product', 
+  //   component: ShowProductComponent
+  // },
+  
   {
     path: 'category/:category',
     component: ShowProductComponent,
@@ -29,11 +25,11 @@ const routes: Routes = [
     path:'events',
     component: EventsComponent
   },
-  {
-    path:'special',
-    component: SpecialsComponent,
-    canActivate: [AuthGuard]
-  },
+  // {
+  //   path:'special',
+  //   component: SpecialsComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path:'login',
     component: LoginComponent
