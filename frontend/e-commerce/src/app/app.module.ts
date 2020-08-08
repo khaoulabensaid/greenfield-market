@@ -24,7 +24,6 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
 import { ProductsComponent } from './products/products.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 import { DisplayProductsComponent } from './display-products/display-products.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
@@ -33,7 +32,25 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MiniCardComponent } from './mini-card/mini-card.component';
+import {
+  HttpClientModule,
+  HttpInterceptor,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 
+import { ApiService } from './service/api.service';
+import { AuthService } from './auth.service';
+import { EventService } from './event.service';
+
+import { RegisterComponent } from './register/register.component';
+import { EventsComponent } from './events/events.component';
+import { SpecialsComponent } from './specials/specials.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
+import { TokenIntercepterService } from './token-intercepter.service';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +69,15 @@ import { MiniCardComponent } from './mini-card/mini-card.component';
     DisplayProductsComponent,
     EditProductComponent,
     OrdersTableComponent,
-    MiniCardComponent
+    MiniCardComponent,
+    CartComponent,
+    CartItemComponent,
+    AppComponent,
+    RegisterComponent,
+    EventsComponent,
+    SpecialsComponent,
+    LoginComponent,
+    ShowProductComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +99,19 @@ import { MiniCardComponent } from './mini-card/mini-card.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+
+  providers: [
+    AuthService,
+    ApiService,
+    AuthGuard,
+    EventService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenIntercepterService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

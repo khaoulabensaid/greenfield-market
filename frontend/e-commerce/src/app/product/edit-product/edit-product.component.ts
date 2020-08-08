@@ -10,7 +10,7 @@ import { Router} from "@angular/router";
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit {
-product= new Product();
+// product= new Product();
   constructor(
     private productService: ProductService,
     private router: Router,

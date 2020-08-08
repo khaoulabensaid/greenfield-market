@@ -1,4 +1,4 @@
-const Category = require('../models/adminCategory');
+const Category = require('../models/category');
 
 exports.addCategory = (req, res, next) => {
     const category = new Category({

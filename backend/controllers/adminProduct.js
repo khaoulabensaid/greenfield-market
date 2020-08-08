@@ -1,4 +1,4 @@
-const Product = require("../models/adminProduct");
+const Product = require("../models/product");
 
 exports.addProduct = (req, res, next) => {
   const product = new Product({

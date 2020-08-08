@@ -20,5 +20,5 @@ const PORT = process.env.PORT || 3000;
 // const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 app.listen(PORT, () => {
-  console.log("Server running on port: " , PORT);
- });
+  console.log("Server running on port: " , "http://localhost:"+PORT);
+});
