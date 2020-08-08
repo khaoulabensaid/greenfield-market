@@ -1,0 +1,25 @@
+<div class="contianer">
+  <div class="card card-form"  style="width: 18rem;">
+    <form class="card-body">
+        <label for="name">name</label>
+        <input id="name" type="text" name="name" class="form-control" [(ngModel)]="name" [ngModelOptions]="{ standalone: true }">
+    
+        <label for="price">price</label>
+        <input id="price" type="text" name="price" class="form-control" [(ngModel)]="price" [ngModelOptions]="{ standalone: true }" >
+    
+        <label for="category">category</label>
+        <input id="category" type="text" name="category" class="form-control" [(ngModel)]="category" [ngModelOptions]="{ standalone: true }" >
+
+        <label for="price">quantity</label>
+        <input id="quantity" type="text" name="quantity" class="form-control" [(ngModel)]="quantity" [ngModelOptions]="{ standalone: true }" >
+        <label for="image">photoUrl</label>
+        <input id="image" type="text" name="image" class="form-control" [(ngModel)]="photoUrl" [ngModelOptions]="{ standalone: true }">
+    
+        <div class="row offset-5" style="margin-top: 10px">
+          <button class="add-btn" (click)="addProduct()">add</button>
+          <button class="add-btn"  (click)="returnToListing()">back</button>
+        </div>
+      
+    </form>
+  </div>
+</div>
