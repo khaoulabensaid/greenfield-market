@@ -24,8 +24,8 @@ app.use(bodyParser.json());
 
 app.use("/", Product);
 app.use("/", Category);
-app.use("/user", user);
-app.use("/", cart);
-// app.get("/", (req, res) => res.send("hello from server"));
+app.use('/user',user);
+app.get('/',(req,res)=>res.send('hello from server'));
+
 
 module.exports = app;

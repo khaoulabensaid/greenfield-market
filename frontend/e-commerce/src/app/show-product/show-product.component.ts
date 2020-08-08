@@ -11,33 +11,22 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./show-product.component.css'],
 })
 export class ShowProductComponent implements OnInit {
-  products: any = [];
-  @Input() productItem: Product;
-
-  constructor(
-    private apiService: ApiService,
-    private activeRoute: ActivatedRoute,
-    private msg: MessengerService,
-    private cartService: CartService
-  ) {
-    // this.readProduct();
-    console.log(this.products);
+  products:any = [];
+  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute) { 
   }
-
-  ngOnInit(): void {
-    this.activeRoute.params.subscribe((routeParams) => {
+  ngOnInit(): void { 
+    this.activeRoute.params.subscribe(routeParams => {
       console.log(routeParams);
-
-      const category = routeParams.category;
+      const category = routeParams.category
       this.apiService.getProducts(category).subscribe((data) => {
         this.products = data;
         console.log('data', data);
       });
     });
   }
-  handleAddToCart() {
-    this.cartService.addProductToCart(this.productItem).subscribe(() => {
-      this.msg.sendMsg(this.productItem);
-    });
-  }
+  // handleAddToCart() {
+  //   this.cartService.addProductToCart(this.productItem).subscribe(() => {
+  //     this.msg.sendMsg(this.productItem);
+  //   });
+  // }
 }

@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoriesComponent } from './categories/categories.component';
 import { ApiService } from './service/api.service';
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
@@ -33,10 +32,7 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
     EventsComponent,
     SpecialsComponent,
     LoginComponent,
-    CategoriesComponent,
-    ShowProductComponent,
-    CartComponent,
-    CartItemComponent,
+    ShowProductComponent
   ],
 
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
